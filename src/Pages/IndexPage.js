@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from '../Components/NavBar/NavBar'
-import { Row, Container } from 'react-bootstrap'
+import { Row, Container,Col } from 'react-bootstrap'
+import CardComponent from '../Components/Card/CardComponent'
 
 export const IndexPage = () => {
-    const [pokemon, setPokemons] = useState([])
+    const [pokemons, setPokemons] = useState([])
 
     useEffect(() => {
         const getPokemons = async (url) => {
@@ -34,8 +35,19 @@ export const IndexPage = () => {
         <>
             <NavBar />
             <Container>
-                <Row>
-
+                <Row className="d-flex justify-content-center mt-5">
+                    {pokemons.length === 0
+                        ? <Col>
+                            <h1>Loading...</h1>
+                        </Col>
+                        : pokemons.map((el, key) => {
+                            return (
+                                <Col key={key}>
+                                  <CardComponent pokemon={el} />
+                                </Col>
+                            )
+                        })
+                    }
                 </Row>
             </Container>
         </>
