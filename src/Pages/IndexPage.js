@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from '../Components/NavBar/NavBar'
-import { Row, Container,Col } from 'react-bootstrap'
+import { Row, Container, Col } from 'react-bootstrap'
 import CardComponent from '../Components/Card/CardComponent'
+import SpinnerLoading from '../Components/Loading/SpinnerLoading'
 
 export const IndexPage = () => {
     const [pokemons, setPokemons] = useState([])
@@ -38,12 +39,12 @@ export const IndexPage = () => {
                 <Row className="d-flex justify-content-center mt-5">
                     {pokemons.length === 0
                         ? <Col>
-                            <h1>Loading...</h1>
+                            <SpinnerLoading />
                         </Col>
                         : pokemons.map((el, key) => {
                             return (
                                 <Col key={key}>
-                                  <CardComponent pokemon={el} />
+                                    <CardComponent pokemon={el} />
                                 </Col>
                             )
                         })
