@@ -29,7 +29,7 @@ export const ModalComponent = ({ pokemon }) => {
           <Container>
             <Row>
               <h2>Stadistics</h2>
-              <Col xs={12} md={8}>
+              <Col xs={6} md={8}>
                 {/* Showing pokemon stats */}
                 {pokemon.stats.map((el, key) => {
                   return (
