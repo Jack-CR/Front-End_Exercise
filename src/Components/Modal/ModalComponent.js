@@ -10,7 +10,7 @@ export const ModalComponent = ({ pokemon }) => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="secondary" onClick={handleShow}>
         Show
       </Button>
 

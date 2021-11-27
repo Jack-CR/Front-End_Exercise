@@ -6,7 +6,7 @@ export const FooterComponent = () => {
 
   return (
     <footer>
-      <Row className="bg bg-light mt-3">
+      <Row className="bg bg-warning mt-3 rounded">
         <Col>
           <label>Yacdany Arguedas Mora ©{date}</label>
         </Col>

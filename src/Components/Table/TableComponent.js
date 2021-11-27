@@ -6,7 +6,7 @@ import ModalComponent from "../Modal/ModalComponent";
 export const TableComponent = ({ pokemons }) => {
   return (
     <Table striped bordered hover className="bg bg-light">
-      <thead>
+      <thead className="bg bg-warning">
         <tr>
           <th>Pokémon</th>
           <th>Information</th>
@@ -25,7 +25,7 @@ export const TableComponent = ({ pokemons }) => {
                   {el.name}
                 </td>
                 <td>
-                  <ModalComponent pokemon={el} />
+                  <ModalComponent pokemon={el}/>
                 </td>
               </tr>
             );
