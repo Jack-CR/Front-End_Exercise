@@ -20,7 +20,7 @@ export const ModalComponent = ({ pokemon }) => {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="bg bg-warning">
           <Modal.Title>
             <h2>{pokemon.name}</h2>
           </Modal.Title>
@@ -80,6 +80,15 @@ export const ModalComponent = ({ pokemon }) => {
                     </ListGroup>
                   );
                 })}
+              </Col>
+              <Col xs={6} md={4}>
+                <h3>Base Experience</h3>
+                {/* Showing Pokemons base experience */}
+                <ListGroup variant="flush">
+                  <ListGroup.Item action variant="light">
+                    {pokemon.base_experience}
+                  </ListGroup.Item>
+                </ListGroup>
               </Col>
             </Row>
           </Container>
