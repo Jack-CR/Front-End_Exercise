@@ -1,14 +1,8 @@
-import React, { useState } from 'react'
-import {
-  Button,
-  Modal,
-  Row,
-  Col,
-  Container,
-  ListGroup
-} from 'react-bootstrap'
+import React, { useState } from "react";
+import { Button, Modal, Row, Col, Container, ListGroup } from "react-bootstrap";
 
 export const ModalComponent = ({ pokemon }) => {
+  /* If you open the modal with the button "Show" show state chante to true and close to false */
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -36,52 +30,59 @@ export const ModalComponent = ({ pokemon }) => {
             <Row>
               <h2>Stadistics</h2>
               <Col xs={12} md={8}>
-
-                {
-                  pokemon.stats.map((el) => {
-                    return (
-                      <ListGroup variant="flush">
-                        <ListGroup.Item action variant="light">{el.stat.name}</ListGroup.Item>
-                      </ListGroup>
-                    )
-                  })
-                }
+                {/* Showing pokemon stats */}
+                {pokemon.stats.map((el, key) => {
+                  return (
+                    <ListGroup variant="flush" key={key}>
+                      <ListGroup.Item action variant="light" key={key}>
+                        {el.stat.name}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  );
+                })}
               </Col>
               <Col xs={6} md={4}>
-                {
-                  pokemon.stats.map((el) => {
-                    return (
-                      <ListGroup variant="flush">
-                        <ListGroup.Item action variant="light">{el.base_stat}</ListGroup.Item>
-                      </ListGroup>
-                    )
-                  })
-                }
+                {/* Showing Pokemon stadistics */}
+                {pokemon.stats.map((el, key) => {
+                  return (
+                    <ListGroup variant="flush" key={key}>
+                      <ListGroup.Item action variant="light">
+                        {el.base_stat}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  );
+                })}
               </Col>
             </Row>
 
             <Row>
               <Col xs={6} md={4}>
-                <img src={pokemon.sprites.back_default} alt={pokemon.name}></img>
+                <img
+                  src={pokemon.sprites.back_default}
+                  alt={pokemon.name}
+                ></img>
               </Col>
               <Col xs={6} md={4}>
-                <img src={pokemon.sprites.front_default} alt={pokemon.name}></img>
+                <img
+                  src={pokemon.sprites.front_default}
+                  alt={pokemon.name}
+                ></img>
               </Col>
               <Col xs={6} md={4}>
-                  <h3>Abilities</h3>
-                  {
-                  pokemon.abilities.map((el) => {
-                    return (
-                      <ListGroup variant="flush">
-                        <ListGroup.Item action variant="light">{el.ability.name}</ListGroup.Item>
-                      </ListGroup>
-                    )
-                  })
-                }
+                <h3>Abilities</h3>
+                {/* Showing Pokemons abilitites */}
+                {pokemon.abilities.map((el, key) => {
+                  return (
+                    <ListGroup variant="flush" key={key}>
+                      <ListGroup.Item action variant="light">
+                        {el.ability.name}
+                      </ListGroup.Item>
+                    </ListGroup>
+                  );
+                })}
               </Col>
             </Row>
           </Container>
-
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -90,7 +91,7 @@ export const ModalComponent = ({ pokemon }) => {
         </Modal.Footer>
       </Modal>
     </>
-  )
-}
+  );
+};
 
-export default ModalComponent
+export default ModalComponent;
