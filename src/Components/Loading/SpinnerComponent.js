@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button,Spinner} from 'react-bootstrap'
 
-export const SpinnerLoading = () => {
+export const SpinnerComponent = () => {
     return (
         <>
             <Button variant="primary" disabled>
@@ -28,4 +28,4 @@ export const SpinnerLoading = () => {
     )
 }
 
-export default SpinnerLoading
+export default SpinnerComponent

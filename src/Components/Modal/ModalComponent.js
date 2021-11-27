@@ -24,6 +24,8 @@ export const ModalComponent = ({pokemon}) => {
         </Modal.Header>
         <Modal.Body>
             <img src={pokemon.avatar} alt={pokemon.name}></img>
+           <h2>{pokemon.base_experience}</h2>
+        
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
