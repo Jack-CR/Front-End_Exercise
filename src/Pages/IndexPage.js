@@ -43,8 +43,8 @@ export const IndexPage = () => {
         <Row className="d-flex justify-content-center mt-5">
           <TableComponent pokemons={pokemons} />
         </Row>
+        <FooterComponent /> 
       </Container>
-      <FooterComponent />
     </>
   );
 };
