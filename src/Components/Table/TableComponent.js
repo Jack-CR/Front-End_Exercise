@@ -13,7 +13,7 @@ export const TableComponent = ({ pokemons }) => {
         </tr>
       </thead>
       <tbody>
-          {/* If the request does not have the pokemon the screen will show the loader , when the request has the pokemon it will show each one */}
+        {/* If the request does not have the pokemon the screen will show the loader , when the request has the pokemon it will show each one */}
         {pokemons.length === 0 ? (
           <SpinnerComponent />
         ) : (
@@ -25,7 +25,7 @@ export const TableComponent = ({ pokemons }) => {
                   {el.name}
                 </td>
                 <td>
-                  <ModalComponent pokemon={el}/>
+                  <ModalComponent pokemon={el} />
                 </td>
               </tr>
             );

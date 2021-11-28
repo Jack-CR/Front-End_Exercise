@@ -28,13 +28,13 @@ export const ModalComponent = ({ pokemon }) => {
         <Modal.Body>
           <Container>
             <Row>
-              <h2>Stadistics</h2>
+              <h4>Stadistics</h4>
               <Col xs={6} md={8}>
                 {/* Showing pokemon stats */}
                 {pokemon.stats.map((el, key) => {
                   return (
                     <ListGroup variant="flush" key={key}>
-                      <ListGroup.Item action variant="light" key={key}>
+                      <ListGroup.Item action variant="dark" key={key}>
                         {el.stat.name}
                       </ListGroup.Item>
                     </ListGroup>
@@ -46,8 +46,8 @@ export const ModalComponent = ({ pokemon }) => {
                 {pokemon.stats.map((el, key) => {
                   return (
                     <ListGroup variant="flush" key={key}>
-                      <ListGroup.Item action variant="light">
-                        {el.base_stat}
+                      <ListGroup.Item action variant="danger">
+                        {el.base_stat}%
                       </ListGroup.Item>
                     </ListGroup>
                   );
@@ -56,38 +56,48 @@ export const ModalComponent = ({ pokemon }) => {
             </Row>
 
             <Row>
-              <Col xs={6} md={4}>
+              <Col xs={6} md={6}>
                 <img
                   src={pokemon.sprites.back_default}
                   alt={pokemon.name}
                 ></img>
               </Col>
-              <Col xs={6} md={4}>
+              <Col xs={6} md={6}>
                 <img
                   src={pokemon.sprites.front_default}
                   alt={pokemon.name}
                 ></img>
               </Col>
-              <Col xs={6} md={4}>
-                <h3>Abilities</h3>
+            </Row>
+            <Row>
+              <Col xs={4} md={4}>
+                <h4>Abilities</h4>
                 {/* Showing Pokemons abilitites */}
                 {pokemon.abilities.map((el, key) => {
                   return (
                     <ListGroup variant="flush" key={key}>
-                      <ListGroup.Item action variant="light">
+                      <ListGroup.Item action variant="success">
                         {el.ability.name}
                       </ListGroup.Item>
                     </ListGroup>
                   );
                 })}
               </Col>
-              <Col xs={6} md={4}>
-                <h3>Base Experience</h3>
+              <Col xs={4} md={4}>
+                <h4>Base Experience</h4>
                 {/* Showing Pokemons base experience */}
                 <ListGroup variant="flush">
-                  <ListGroup.Item action variant="light">
-                    {pokemon.base_experience}
+                  <ListGroup.Item action variant="success">
+                    {pokemon.base_experience}%
                   </ListGroup.Item>
+                </ListGroup>
+              </Col>
+              <Col xs={4} md={4}>
+                <h4>Weight</h4>
+                <ListGroup variant="flush">
+                    <ListGroup.Item action variant="success">
+                        {pokemon.weight} pounds
+                    </ListGroup.Item>
                 </ListGroup>
               </Col>
             </Row>

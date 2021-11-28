@@ -23,7 +23,7 @@ export const IndexPage = () => {
           name: json.name,
           avatar: json.sprites.front_default,
           base_experience: json.base_experience,
-          moves: json.moves,
+          weight: json.weight,
           stats: json.stats,
           sprites: json.sprites,
           abilities: json.abilities,
